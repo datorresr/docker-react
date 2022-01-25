@@ -13,5 +13,7 @@ COPY --chown=node:node ./ ./
 
 FROM nginx
 
+EXPOSE 80
+
 COPY --from=builder /app/build /usr/share/nginx
 CMD ["npm", "run", "start"]
